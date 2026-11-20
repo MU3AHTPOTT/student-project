@@ -1,8 +1,15 @@
+"""
+Программа для расчета стоимости билетов с учетом количества посетителей
+и предоставления групповых скидок.
+Автор: Баскаков Алексей, СИБ-23-13
+"""
+
 ADULT_TICKET_PRICE = 2000
 CHILDREN_TICKET_PRICE = 1000
 FOUR_TO_SIX_PEOPLE_DISCOUNT = 5
 SEVEN_AND_MORE_PEOPLE_DISCOUNT = 10
 
+# Вывод таблицы стоимости билетов для двух взрослых и от одного до пяти детей
 def table_output():
     print("")
     print("=" * 55)
@@ -23,6 +30,7 @@ def table_output():
     print("=" * 55)
     print("")
 
+# Ввод с клавиатуры количества взрослых и детей и возврат их количества
 def amount_people_input():
     adults = 0
     children = -1
@@ -39,6 +47,7 @@ def amount_people_input():
     print("")
     return adults, children
 
+# Рассчет стоимости билетов, скидки и вывод чека
 def output(adults, children):
     people = adults + children
     price = ADULT_TICKET_PRICE * adults + CHILDREN_TICKET_PRICE * children
@@ -62,6 +71,7 @@ def output(adults, children):
     print("=" * 40)
     print("")
 
+# Запрос повторного расчета заказа и возврат решения пользователя
 def cycle_input():
     while True:
         cycle = input("Рассчитать другой заказ? (да/нет): ").strip().lower()
